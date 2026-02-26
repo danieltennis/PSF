@@ -4,16 +4,20 @@
 #include <string>
 #include <vector>
 
+// forward declaration
+class MeetingPlanner;
+
 class XMLreader {
 public:
-    // Use Case 1.1: lezen van rooms, meetings en participations
-    bool readFile(const std::string& filename);
+    // Leest het XML-bestand en vult de MeetingPlanner
+    // return true = alles ok
+    // return false = fatale fout (terminate)
+    bool readFile(const std::string& filename, MeetingPlanner& planner);
 
 private:
-    // Hier verzamelen we alle foutmeldingen
+    // Verzamelt alle niet-fatale fouten tijdens het lezen
     std::vector<std::string> errors;
 
-    // (optioneel, maar handig)
     void printErrors() const;
 };
 
