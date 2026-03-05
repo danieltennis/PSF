@@ -4,9 +4,25 @@
 
 #ifndef PSF_MEETINGPLANNER_H
 #define PSF_MEETINGPLANNER_H
-
+#include <string>
+#include <vector>
+#include "Room.h"
+#include "Meeting.h"
+#include "Participation.h"
+using namespace std;
 
 class MeetingPlanner {
+private:
+   vector<Room> rooms;
+   vector<Meeting> meetings;
+   vector<Participation> participations;
+
+
+public:
+   void addRoom(const string& name,const string& id, int capacity);
+   void addMeeting(const string& label, const string& id,const string& room,const string& date);
+   void addParticipation(const string& meeting, const string& user);
+   bool isConsistent()const;
 };
 
 

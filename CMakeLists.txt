@@ -29,8 +29,7 @@ set(DEBUG_SOURCE_FILES
         MeetingPlanner.h
         XMLreader.cpp
         XMLreader.h
-        Reporter.cpp
-        Reporter.h)
+        )
 # Create RELEASE target
 add_executable(release_target ${RELEASE_SOURCE_FILES})
 # Create DEBUG target

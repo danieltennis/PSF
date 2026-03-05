@@ -14,6 +14,7 @@ public:
     // return false = fatale fout (terminate)
     bool readFile(const std::string& filename, MeetingPlanner& planner);
 
+
 private:
     // Verzamelt alle niet-fatale fouten tijdens het lezen
     std::vector<std::string> errors;

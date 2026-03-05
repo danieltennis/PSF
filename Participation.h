@@ -4,9 +4,17 @@
 
 #ifndef TICTACTOE10_PARTICIPATION_H
 #define TICTACTOE10_PARTICIPATION_H
-
+#include <string>
+using namespace std;
 
 class Participation {
+private:
+
+    string users;
+    string meetingIdentifiers;
+public:
+    Participation(const string& users,const string& meetingIdentifiers);
+
 };
 
 

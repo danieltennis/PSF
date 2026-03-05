@@ -3,3 +3,8 @@
 //
 
 #include "Participation.h"
+
+Participation::Participation(const string &users, const string &meetingIdentifiers) {
+    string user = users;
+    string meetingID = meetingIdentifiers;
+}

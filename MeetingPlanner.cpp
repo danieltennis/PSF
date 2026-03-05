@@ -3,3 +3,12 @@
 //
 
 #include "MeetingPlanner.h"
+
+#include "Room.h"
+
+void MeetingPlanner::addRoom(const string &name, const string &id, int capacity) {
+    Room r;
+    r.name = name;
+    r.id = id;
+    r.capacity = capacity;
+}

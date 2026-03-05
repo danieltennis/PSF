@@ -92,7 +92,7 @@ bool XMLreader::readFile(const std::string& filename,
         planner.addParticipation(meeting, user);
     }
 
-   
+
     printErrors();
 
 
