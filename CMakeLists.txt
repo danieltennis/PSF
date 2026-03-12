@@ -20,7 +20,6 @@ set(RELEASE_SOURCE_FILES
 # Make sure the "main" function is in "main_debug"!
 set(DEBUG_SOURCE_FILES
         main.cpp
-        main.cpp
         Meeting.cpp
         Participation.cpp
         Room.cpp
@@ -29,6 +28,10 @@ set(DEBUG_SOURCE_FILES
         MeetingPlanner.h
         XMLreader.cpp
         XMLreader.h
+        tinyxml_2_6_2/tinyxml.cpp
+        tinyxml_2_6_2/tinyxmlparser.cpp
+        tinyxml_2_6_2/tinyxmlerror.cpp
+        tinyxml_2_6_2/tinystr.cpp
         )
 # Create RELEASE target
 add_executable(release_target ${RELEASE_SOURCE_FILES})

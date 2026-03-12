@@ -32,6 +32,7 @@ void checkCapacity(Room& room)
    }
 }
 
+
 //Algemene checker voor alles in 1 keer//
 bool isValid(Room& room)
 {

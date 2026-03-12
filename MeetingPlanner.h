@@ -23,11 +23,15 @@ private:
 
 public:
    void addRoom(const string& name,const string& id, int capacity);
-   void addMeeting(const string& label, const string& id,const string& room,const string& date);
+
+   Room findRoom(const string &id);
+
+   void addMeeting(const string& label, const string& id,Room room,const string& date);
    void addParticipation(const string& meeting, const string& user);
    bool isConsistent()const;
 
    void Write_Output(const string& filename)const;
+   void printAll() const;
 
 
 

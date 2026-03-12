@@ -8,3 +8,5 @@
 bool Meeting::isPast() const {
     return false;
 }
+
+

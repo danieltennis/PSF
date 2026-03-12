@@ -15,7 +15,7 @@ public:
     string identifier;
     int capacity;
 
-
+    Room() = default;
     //CONSTRUCTOR//
     Room(string n, string i, int c): name(n), identifier(i), capacity(c) {}
 

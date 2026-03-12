@@ -1,31 +1,24 @@
-//
-// Created by danie on 2/26/2026.
-//
-
 #ifndef TICTACTOE10_PARTICIPATION_H
 #define TICTACTOE10_PARTICIPATION_H
 #include <string>
-using namespace std;
 
 class Participation {
 private:
-    string user;
-    string meetingIdentifiers;
+    std::string user;
+    std::string meetingIdentifier;
 
 public:
-    //CONSTRUCTOR//
-    Participation(string u, string m): user(u), meetingIdentifiers(m){}
+    // CONSTRUCTOR
+    Participation(std::string u, std::string m) : user(u), meetingIdentifier(m) {}
 
-    //GETTERS//
-    string getUser() const {return user;}
-    string getMeeting() const {return meetingIdentifiers;}
+    // GETTERS
+    std::string getUser() const { return user; }
+    
+    std::string getMeetingIdentifier() const { return meetingIdentifier; }
 
-    //SETTERS//
-    void setUser(string u) {this->user = u;}
-    void setMeeting(string m) {this->meetingIdentifiers = m;}
-
+    // SETTERS
+    void setUser(std::string u) { this->user = u; }
+    void setMeeting(std::string m) { this->meetingIdentifier = m; }
 };
 
-
 #endif //TICTACTOE10_PARTICIPATION_H
-#include "Participation.h"

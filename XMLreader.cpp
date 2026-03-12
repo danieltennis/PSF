@@ -69,7 +69,9 @@ bool XMLreader::readFile(const std::string& filename,
             continue;
         }
 
-        planner.addMeeting(label, id, room, date);
+        Room actualRoom = planner.findRoom(room);
+
+        planner.addMeeting(label, id, actualRoom, date);
     }
 
     /* =====================
