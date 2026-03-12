@@ -4,19 +4,31 @@
 
 #ifndef TICTACTOE10_ROOM_H
 #define TICTACTOE10_ROOM_H
+
 #include <string>
 using namespace std;
 
-class Room {
+class Room
+{
 public:
-    Room();
     string name;
-    string id;
+    string identifier;
     int capacity;
 
-     Room(const string& name,const string& id, int capacity);
-     int getCapacity()const{return capacity;}
 
+    //CONSTRUCTOR//
+    Room(string n, string i, int c): name(n), identifier(i), capacity(c) {}
+
+    //GETTERS//
+    string getName() const {return name;}
+    string getIdentifier() const {return identifier;}
+    int getCapacity() const {return capacity;}
+
+    //SETTERS//
+    //gaan we dit niet moeten gebruiken om een kamer aan te maken aan de hand van de xml parser?//
+    void setName(string na) {this->name = na;}
+    void setIdentifier(string id) {this->identifier = id;}
+    void setCapacity(int ca) {this->capacity = ca;}
 };
 
 

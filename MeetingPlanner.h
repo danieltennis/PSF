@@ -9,6 +9,9 @@
 #include "Room.h"
 #include "Meeting.h"
 #include "Participation.h"
+#include <string>
+using namespace std;
+
 using namespace std;
 
 class MeetingPlanner {
@@ -23,6 +26,11 @@ public:
    void addMeeting(const string& label, const string& id,const string& room,const string& date);
    void addParticipation(const string& meeting, const string& user);
    bool isConsistent()const;
+
+   void Write_Output(const string& filename)const;
+
+
+
 };
 
 

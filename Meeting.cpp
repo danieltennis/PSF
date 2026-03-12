@@ -4,3 +4,7 @@
 
 #include "Meeting.h"
 #include "Room.h"
+
+bool Meeting::isPast() const {
+    return false;
+}

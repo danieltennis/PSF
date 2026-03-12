@@ -9,13 +9,23 @@ using namespace std;
 
 class Participation {
 private:
-
-    string users;
+    string user;
     string meetingIdentifiers;
+
 public:
-    Participation(const string& users,const string& meetingIdentifiers);
+    //CONSTRUCTOR//
+    Participation(string u, string m): user(u), meetingIdentifiers(m){}
+
+    //GETTERS//
+    string getUser() const {return user;}
+    string getMeeting() const {return meetingIdentifiers;}
+
+    //SETTERS//
+    void setUser(string u) {this->user = u;}
+    void setMeeting(string m) {this->meetingIdentifiers = m;}
 
 };
 
 
 #endif //TICTACTOE10_PARTICIPATION_H
+#include "Participation.h"
