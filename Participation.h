@@ -1,3 +1,4 @@
+
 #ifndef TICTACTOE10_PARTICIPATION_H
 #define TICTACTOE10_PARTICIPATION_H
 #include <string>
