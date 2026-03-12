@@ -16,6 +16,7 @@ using namespace std;
 
 class MeetingPlanner {
 private:
+
    vector<Room> rooms;
    vector<Meeting> meetings;
    vector<Participation> participations;

@@ -7,12 +7,14 @@
 #include <iostream>
 #include <fstream>
 #include "Room.h"
+#include "gtest/gtest.h"
 using namespace std;
 
 
 
 
 void MeetingPlanner::addRoom(const string &name, const string &id, int capacity) {
+
     Room r(name, id, capacity);
     rooms.push_back(r);
 }
