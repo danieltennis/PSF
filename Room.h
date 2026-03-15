@@ -30,6 +30,10 @@ public:
     void setIdentifier(string id) {this->identifier = id;}
     void setCapacity(int ca) {this->capacity = ca;}
 };
+bool isValid(Room& room);
+void checkName(Room& room);
+void checkIdentifier(Room& room);
+void checkCapacity(Room& room);
 
 
 #endif //TICTACTOE10_ROOM_H

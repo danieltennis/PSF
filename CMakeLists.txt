@@ -4,10 +4,19 @@ project(PSF)
 set(CMAKE_CXX_STANDARD 20)
 set(CMAKE_CXX_FLAGS "${CMAKE_CXX_FLAGS} -Wall -Werror")
 
-# 1. Zoek GTest op het systeem
-find_package(GTest REQUIRED)
+include(FetchContent)
 
-# 2. De bronbestanden (zonder main.cpp!)
+FetchContent_Declare(
+        googletest
+        URL https://github.com/google/googletest/archive/refs/heads/main.zip
+        DOWNLOAD_EXTRACT_TIMESTAMP TRUE
+)
+
+FetchContent_MakeAvailable(googletest)
+
+enable_testing()
+
+# Bronbestanden (zonder main.cpp)
 set(COMMON_SOURCES
         Meeting.cpp
         Participation.cpp
@@ -18,9 +27,24 @@ set(COMMON_SOURCES
         tinyxml_2_6_2/tinyxmlparser.cpp
         tinyxml_2_6_2/tinyxmlerror.cpp
         tinyxml_2_6_2/tinystr.cpp
+        Test/Test_Meeting.cpp
+        Test/Test_Meeting.cpp
+        Test/Test_Meeting.cpp
+        Test/Test_MeetingPlanner.cpp
+        Test/Test_Participation.cpp
+        Test/Test_XMLreader.cpp
 )
 
-# 3. De Test Executable
-add_executable(runUnitTests Test.cpp ${COMMON_SOURCES})
+# Test executable
+add_executable(runUnitTests
+        Test/Test.cpp
+        ${COMMON_SOURCES}
+)
 
-target_link_libraries(runUnitTests GTest::GTest GTest::Main pthread)
+target_link_libraries(runUnitTests
+        gtest
+        gtest_main
+)
+
+include(GoogleTest)
+gtest_discover_tests(runUnitTests)

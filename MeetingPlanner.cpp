@@ -66,8 +66,29 @@ void MeetingPlanner::addParticipation(const string &meetingId, const string &use
     participations.emplace_back(user, meetingId);
 }
 
-bool MeetingPlanner::isConsistent() const {
-    return true; // Placeholder so the program can run
+bool MeetingPlanner::isConsistent() const
+{
+    for (const Meeting& m : meetings)
+    {
+        int participantCount = 0;
+
+        // tel aantal participations voor deze meeting
+        for (const Participation& p : participations)
+        {
+            if (p.getMeetingIdentifier() == m.getIdentifier())
+            {
+                participantCount++;
+            }
+        }
+
+        // check capaciteit
+        if (participantCount > m.getRoom().getCapacity())
+        {
+            return false;
+        }
+    }
+
+    return true;
 }
 
 void MeetingPlanner::printAll() const {
