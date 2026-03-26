@@ -33,12 +33,18 @@ set(COMMON_SOURCES
         Test/Test_MeetingPlanner.cpp
         Test/Test_Participation.cpp
         Test/Test_XMLreader.cpp
+        Campus.cpp
+        Campus.h
+        Building.cpp
+        Building.h
 )
 
 # Test executable
 add_executable(runUnitTests
         Test/Test.cpp
         ${COMMON_SOURCES}
+        Campus.cpp
+        Campus.h
 )
 
 target_link_libraries(runUnitTests

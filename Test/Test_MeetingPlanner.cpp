@@ -10,7 +10,7 @@ TEST(MeetingPlannerTest, TestAddRoom)
 {
     MeetingPlanner* planner = new MeetingPlanner();
 
-    planner->addRoom("Room A", "A1", 10);
+    planner->addRoom("Room A", "A1", 10,"5","4");
 
     Room result = planner->findRoom("A1");
 
@@ -23,7 +23,7 @@ TEST(MeetingPlannerTest, TestFindRoom)
 {
     MeetingPlanner* planner = new MeetingPlanner();
 
-    planner->addRoom("Room B", "B1", 20);
+    planner->addRoom("Room B", "B1", 20,"5","4");
 
     Room result = planner->findRoom("B1");
 
@@ -36,7 +36,7 @@ TEST(MeetingPlannerTest, TestAddMeeting)
 {
     MeetingPlanner* planner = new MeetingPlanner();
 
-    planner->addRoom("Room A", "A1", 10);
+    planner->addRoom("Room A", "A1", 10,"5","10");
 
     Room room = planner->findRoom("A1");
 
@@ -51,7 +51,7 @@ TEST(MeetingPlannerTest, TestAddParticipation)
 {
     MeetingPlanner* planner = new MeetingPlanner();
 
-    planner->addRoom("Room A", "A1", 10);
+    planner->addRoom("Room A", "A1", 10,"5","4");
 
     Room room = planner->findRoom("A1");
 
@@ -68,7 +68,7 @@ TEST(MeetingPlannerTest, TestInconsistentCapacity)
 {
     MeetingPlanner* planner = new MeetingPlanner();
 
-    planner->addRoom("Room A", "A1", 2);
+    planner->addRoom("Room A", "A1", 2,"4","2");
 
     Room room = planner->findRoom("A1");
 

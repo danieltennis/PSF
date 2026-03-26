@@ -10,7 +10,12 @@
 #include "Room.h"
 #include "Meeting.h"
 #include "Participation.h"
-#include <string>
+#include "Campus.h"
+#include "Building.h"
+
+
+extern std::vector<Campus> campuses;
+extern std::vector<Building> buildings;
 using namespace std;
 
 using namespace std;
@@ -24,8 +29,6 @@ private:
 
 
 public:
-   void addRoom(const string& name,const string& id, int capacity);
-
    Room findRoom(const string &id);
 
    void addMeeting(const string& label, const string& id,Room room,const string& date);
@@ -34,6 +37,11 @@ public:
 
    void Write_Output(const string& filename)const;
    void printAll() const;
+
+
+   void addCampus(const std::string& name, const std::string& id);
+   void addBuilding(const std::string& name, const std::string& id, const std::string& campusId);
+   void addRoom(const std::string& name, const std::string& id, int capacity, const std::string& campusId, const std::string& buildingId);
 
 
 

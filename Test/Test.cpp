@@ -4,23 +4,22 @@
 // isValid moet TRUE zijn voor correcte room
 TEST(RoomTest, ValidRoom)
 {
-    Room room("Room A", "A1", 10);
-
+    Room room("Room A", "A1", 10, "Main Campus", "Building 1");
     EXPECT_TRUE(isValid(room));
 }
 
-// lege naam moet FALSE geven
 TEST(RoomTest, EmptyName)
 {
-    Room room("", "A1", 10);
-
+    Room room("", "A1", 10, "Main Campus", "Building 1");
     EXPECT_FALSE(isValid(room));
 }
+
+// etc.
 
 // lege identifier moet FALSE geven
 TEST(RoomTest, EmptyIdentifier)
 {
-    Room room("Room A", "", 10);
+    Room room("Room A", "", 10,"Main Campus", "Building 1");
 
     EXPECT_FALSE(isValid(room));
 }
@@ -28,7 +27,7 @@ TEST(RoomTest, EmptyIdentifier)
 // capaciteit <= 0 moet FALSE geven
 TEST(RoomTest, InvalidCapacity)
 {
-    Room room("Room A", "A1", 0);
+    Room room("Room A", "A1", 0,"Main Campus","Building1");
 
     EXPECT_FALSE(isValid(room));
 }
@@ -36,7 +35,7 @@ TEST(RoomTest, InvalidCapacity)
 // negatieve capaciteit
 TEST(RoomTest, NegativeCapacity)
 {
-    Room room("Room A", "A1", -5);
+    Room room("Room A", "A1", -5,"Main Campus","Building1");
 
     EXPECT_FALSE(isValid(room));
 }

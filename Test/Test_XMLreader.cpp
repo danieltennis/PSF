@@ -12,7 +12,7 @@ TEST(XMLreaderTest, TestReadValidFile)
     XMLreader* reader = new XMLreader();
     MeetingPlanner* planner = new MeetingPlanner();
 
-    bool result = reader->readFile("Meeting.xml", *planner);
+    bool result = reader->readFile("../Meeting.xml", *planner);
 
     ASSERT_TRUE(result);
 }

@@ -6,7 +6,7 @@ using namespace std;
 using namespace std::chrono;
 
 TEST(MeetingTest, TestGetLabel) {
-    Room* room = new Room("A1", "RoomA", 10);
+    Room* room = new Room("RoomA", "A1", 10, "Main Campus", "Building 1");
     year_month_day date = year{2026}/5/22;
 
     Meeting* meeting = new Meeting("Weekly meeting", "M1", *room, date);
@@ -18,7 +18,7 @@ TEST(MeetingTest, TestGetLabel) {
 }
 
 TEST(MeetingTest, TestGetIdentifier) {
-    Room* room = new Room("A1", "RoomA", 10);
+    Room* room = new Room("RoomA", "A1", 10, "Main Campus", "Building 1");
     year_month_day date = year{2026}/5/22;
 
     Meeting* meeting = new Meeting("Weekly meeting", "M1", *room, date);
@@ -30,19 +30,19 @@ TEST(MeetingTest, TestGetIdentifier) {
 }
 
 TEST(MeetingTest, TestGetRoom) {
-    Room* room = new Room("A1", "RoomA", 10);
+    Room* room = new Room("RoomA", "A1", 10, "Main Campus", "Building 1");
     year_month_day date = year{2026}/5/22;
 
     Meeting* meeting = new Meeting("Weekly meeting", "M1", *room, date);
 
     string result = meeting->getRoom().getIdentifier();
-    string expected = "RoomA";
+    string expected = "A1";
 
     ASSERT_EQ(expected, result);
 }
 
 TEST(MeetingTest, TestSetLabel) {
-    Room* room = new Room("A1", "RoomA", 10);
+    Room* room = new Room("RoomA", "A1", 10, "Main Campus", "Building 1");
     year_month_day date = year{2026}/5/22;
 
     Meeting* meeting = new Meeting("Weekly meeting", "M1", *room, date);
@@ -56,7 +56,7 @@ TEST(MeetingTest, TestSetLabel) {
 }
 
 TEST(MeetingTest, TestSetIdentifier) {
-    Room* room = new Room("A1", "RoomA", 10);
+    Room* room = new Room("RoomA", "A1", 10, "Main Campus", "Building 1");
     year_month_day date = year{2026}/5/22;
 
     Meeting* meeting = new Meeting("Weekly meeting", "M1", *room, date);

@@ -21,6 +21,48 @@ bool XMLreader::readFile(const std::string& filename,
         return false;
     }
 
+
+    /* =====================
+   CAMPUSES lezen
+   ===================== */
+    for (TiXmlElement* campusElem = root->FirstChildElement("CAMPUS");
+         campusElem != nullptr;
+         campusElem = campusElem->NextSiblingElement("CAMPUS")) {
+
+        const char* name = campusElem->FirstChildElement("NAME") ?
+                           campusElem->FirstChildElement("NAME")->GetText() : nullptr;
+        const char* id = campusElem->FirstChildElement("IDENTIFIER") ?
+                         campusElem->FirstChildElement("IDENTIFIER")->GetText() : nullptr;
+
+        if (!name || !id) {
+            errors.push_back("CAMPUS met ontbrekende velden");
+            continue;
+        }
+
+        planner.addCampus(name, id);
+         }
+
+    /* =====================
+   BUILDINGS lezen
+   ===================== */
+    for (TiXmlElement* buildingElem = root->FirstChildElement("BUILDING");
+         buildingElem != nullptr;
+         buildingElem = buildingElem->NextSiblingElement("BUILDING")) {
+
+        const char* name = buildingElem->FirstChildElement("NAME") ?
+                           buildingElem->FirstChildElement("NAME")->GetText() : nullptr;
+        const char* id = buildingElem->FirstChildElement("IDENTIFIER") ?
+                         buildingElem->FirstChildElement("IDENTIFIER")->GetText() : nullptr;
+        const char* campus = buildingElem->FirstChildElement("CAMPUS") ?
+                             buildingElem->FirstChildElement("CAMPUS")->GetText() : nullptr;
+
+        if (!name || !id || !campus) {
+            errors.push_back("BUILDING met ontbrekende velden");
+            continue;
+        }
+
+        planner.addBuilding(name, id, campus);
+         }
     /* =====================
        ROOMS lezen
        ===================== */
@@ -30,12 +72,20 @@ bool XMLreader::readFile(const std::string& filename,
 
         const char* name = roomElem->FirstChildElement("NAME") ?
                            roomElem->FirstChildElement("NAME")->GetText() : nullptr;
+
         const char* id = roomElem->FirstChildElement("IDENTIFIER") ?
                          roomElem->FirstChildElement("IDENTIFIER")->GetText() : nullptr;
+
         const char* cap = roomElem->FirstChildElement("CAPACITY") ?
                           roomElem->FirstChildElement("CAPACITY")->GetText() : nullptr;
 
-        if (!name || !id || !cap) {
+        const char* campus = roomElem->FirstChildElement("CAMPUS") ?
+                             roomElem->FirstChildElement("CAMPUS")->GetText() : nullptr;
+
+        const char* building = roomElem->FirstChildElement("BUILDING") ?
+                               roomElem->FirstChildElement("BUILDING")->GetText() : nullptr;
+
+        if (!name || !id || !cap || !campus || !building) {
             errors.push_back("ROOM met ontbrekende velden");
             continue;
         }
@@ -46,8 +96,8 @@ bool XMLreader::readFile(const std::string& filename,
             continue;
         }
 
-        planner.addRoom(name, id, capacity);
-    }
+        planner.addRoom(name, id, capacity, campus, building);
+         }
 
     /* =====================
        MEETINGS lezen

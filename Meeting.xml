@@ -3,11 +3,15 @@
         <NAME>M.G.025</NAME>
         <IDENTIFIER>M.G.025</IDENTIFIER>
         <CAPACITY>55</CAPACITY>
+        <CAMPUS>C1</CAMPUS>
+        <BUILDING>B1</BUILDING>
     </ROOM>
     <ROOM>
         <NAME>M.G.023</NAME>
         <IDENTIFIER>Room98732</IDENTIFIER>
         <CAPACITY>10</CAPACITY>
+        <CAMPUS>C1</CAMPUS>
+        <BUILDING>B2</BUILDING>
     </ROOM>
     <MEETING>
         <LABEL>Weekly meeting</LABEL>
