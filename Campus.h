@@ -3,18 +3,20 @@
 
 #include <string>
 
-
 class Campus {
 private:
     std::string name;
     std::string identifier;
 
 public:
-    Campus(const std::string& name,
-           const std::string& identifier);
+    Campus(); // default constructor
+    Campus(const std::string& name, const std::string& identifier);
 
     std::string getName() const;
     std::string getIdentifier() const;
+
+    void setName(const std::string& n);
+    void setIdentifier(const std::string& id);
 };
 
 #endif

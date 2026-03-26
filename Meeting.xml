@@ -1,26 +1,32 @@
 <SYSTEM>
+    <CAMPUS>
+        <NAME>Main Campus</NAME>
+        <IDENTIFIER>C1</IDENTIFIER>
+    </CAMPUS>
+
+    <BUILDING>
+        <NAME>Main Building</NAME>
+        <IDENTIFIER>B1</IDENTIFIER>
+        <CAMPUS>C1</CAMPUS>
+    </BUILDING>
+
     <ROOM>
-        <NAME>M.G.025</NAME>
-        <IDENTIFIER>M.G.025</IDENTIFIER>
-        <CAPACITY>55</CAPACITY>
+        <NAME>Room A</NAME>
+        <IDENTIFIER>A1</IDENTIFIER>
+        <CAPACITY>10</CAPACITY>
         <CAMPUS>C1</CAMPUS>
         <BUILDING>B1</BUILDING>
     </ROOM>
-    <ROOM>
-        <NAME>M.G.023</NAME>
-        <IDENTIFIER>Room98732</IDENTIFIER>
-        <CAPACITY>10</CAPACITY>
-        <CAMPUS>C1</CAMPUS>
-        <BUILDING>B2</BUILDING>
-    </ROOM>
+
     <MEETING>
-        <LABEL>Weekly meeting</LABEL>
-        <IDENTIFIER>Meeting_478463</IDENTIFIER>
-        <ROOM>Room98732</ROOM>
+        <LABEL>Weekly Meeting</LABEL>
+        <IDENTIFIER>M1</IDENTIFIER>
+        <ROOM>A1</ROOM>
         <DATE>2026-05-22</DATE>
     </MEETING>
+
     <PARTICIPATION>
-        <MEETING>Meeting_478463</MEETING>
+        <MEETING>M1</MEETING>
         <USER>Peter Selie</USER>
     </PARTICIPATION>
 </SYSTEM>

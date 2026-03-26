@@ -1,30 +1,24 @@
-
 #include "XMLreader.h"
 #include "MeetingPlanner.h"
-
-#include <iostream>
 #include "tinyxml_2_6_2/tinyxml.h"
 
-bool XMLreader::readFile(const std::string& filename,
-                         MeetingPlanner& planner) {
+#include <iostream>
+#include <string>
 
+bool XMLreader::readFile(const std::string& filename, MeetingPlanner& planner) {
     TiXmlDocument doc(filename.c_str());
 
     if (!doc.LoadFile()) {
-        std::cerr << doc.ErrorDesc() << std::endl;
+        std::cerr << "Kon bestand niet openen: " << filename << " (" << doc.ErrorDesc() << ")" << std::endl;
         return false;
     }
 
     TiXmlElement* root = doc.FirstChildElement("SYSTEM");
     if (!root) {
-        std::cerr << "Geen SYSTEM element gevonden" << std::endl;
+        std::cerr << "Geen SYSTEM element gevonden in XML." << std::endl;
         return false;
     }
 
-
-    /* =====================
-   CAMPUSES lezen
-   ===================== */
     for (TiXmlElement* campusElem = root->FirstChildElement("CAMPUS");
          campusElem != nullptr;
          campusElem = campusElem->NextSiblingElement("CAMPUS")) {
@@ -40,11 +34,8 @@ bool XMLreader::readFile(const std::string& filename,
         }
 
         planner.addCampus(name, id);
-         }
+    }
 
-    /* =====================
-   BUILDINGS lezen
-   ===================== */
     for (TiXmlElement* buildingElem = root->FirstChildElement("BUILDING");
          buildingElem != nullptr;
          buildingElem = buildingElem->NextSiblingElement("BUILDING")) {
@@ -62,26 +53,20 @@ bool XMLreader::readFile(const std::string& filename,
         }
 
         planner.addBuilding(name, id, campus);
-         }
-    /* =====================
-       ROOMS lezen
-       ===================== */
+    }
+
     for (TiXmlElement* roomElem = root->FirstChildElement("ROOM");
          roomElem != nullptr;
          roomElem = roomElem->NextSiblingElement("ROOM")) {
 
         const char* name = roomElem->FirstChildElement("NAME") ?
                            roomElem->FirstChildElement("NAME")->GetText() : nullptr;
-
         const char* id = roomElem->FirstChildElement("IDENTIFIER") ?
                          roomElem->FirstChildElement("IDENTIFIER")->GetText() : nullptr;
-
         const char* cap = roomElem->FirstChildElement("CAPACITY") ?
                           roomElem->FirstChildElement("CAPACITY")->GetText() : nullptr;
-
         const char* campus = roomElem->FirstChildElement("CAMPUS") ?
                              roomElem->FirstChildElement("CAMPUS")->GetText() : nullptr;
-
         const char* building = roomElem->FirstChildElement("BUILDING") ?
                                roomElem->FirstChildElement("BUILDING")->GetText() : nullptr;
 
@@ -97,11 +82,8 @@ bool XMLreader::readFile(const std::string& filename,
         }
 
         planner.addRoom(name, id, capacity, campus, building);
-         }
+    }
 
-    /* =====================
-       MEETINGS lezen
-       ===================== */
     for (TiXmlElement* meetElem = root->FirstChildElement("MEETING");
          meetElem != nullptr;
          meetElem = meetElem->NextSiblingElement("MEETING")) {
@@ -121,13 +103,9 @@ bool XMLreader::readFile(const std::string& filename,
         }
 
         Room actualRoom = planner.findRoom(room);
-
         planner.addMeeting(label, id, actualRoom, date);
     }
 
-    /* =====================
-       PARTICIPATIONS lezen
-       ===================== */
     for (TiXmlElement* partElem = root->FirstChildElement("PARTICIPATION");
          partElem != nullptr;
          partElem = partElem->NextSiblingElement("PARTICIPATION")) {
@@ -145,9 +123,7 @@ bool XMLreader::readFile(const std::string& filename,
         planner.addParticipation(meeting, user);
     }
 
-
     printErrors();
-
 
     if (!planner.isConsistent()) {
         std::cerr << "Systeem is inconsistent. Programma wordt gestopt." << std::endl;

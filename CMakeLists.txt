@@ -37,6 +37,8 @@ set(COMMON_SOURCES
         Campus.h
         Building.cpp
         Building.h
+        Test/Building/Test_Building.cpp
+        Test/Campus/Test_Campus.cpp
 )
 
 # Test executable
@@ -45,6 +47,7 @@ add_executable(runUnitTests
         ${COMMON_SOURCES}
         Campus.cpp
         Campus.h
+        Test/Campus/Test_Campus.cpp
 )
 
 target_link_libraries(runUnitTests
