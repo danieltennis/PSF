@@ -58,14 +58,42 @@ void MeetingPlanner::addParticipation(const string &meetingId, const string &use
 
 bool MeetingPlanner::isConsistent() const {
     for (const auto& m : meetings) {
+
         int count = 0;
         for (const auto& p : participations)
             if (p.getMeetingIdentifier() == m.getIdentifier())
                 count++;
+
         if (count > m.getRoom().getCapacity())
             return false;
+
+        for (const auto& ren : renovations) {
+            if (m.getRoom().getIdentifier() == ren.getRoomId()) {
+                if (m.getDate() >= ren.getStart() && m.getDate() <= ren.getEnd()) {
+                    return false;
+                }
+            }
+        }
     }
     return true;
+}
+
+void MeetingPlanner::addRenovation(const string& roomId,const string& startStr,const string& endStr)
+{
+    int y1, m1, d1;
+    int y2, m2, d2;
+    char dash;
+
+    stringstream ss1(startStr);
+    ss1 >> y1 >> dash >> m1 >> dash >> d1;
+
+    stringstream ss2(endStr);
+    ss2 >> y2 >> dash >> m2 >> dash >> d2;
+
+    chrono::year_month_day start{chrono::year{y1}, chrono::month{(unsigned)m1}, chrono::day{(unsigned)d1}};
+    chrono::year_month_day end{chrono::year{y2}, chrono::month{(unsigned)m2}, chrono::day{(unsigned)d2}};
+
+    renovations.emplace_back(roomId, start, end);
 }
 
 void MeetingPlanner::Write_Output(const string &filename) const {

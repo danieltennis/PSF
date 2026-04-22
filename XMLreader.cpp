@@ -84,6 +84,27 @@ bool XMLreader::readFile(const std::string& filename, MeetingPlanner& planner) {
         planner.addRoom(name, id, capacity, campus, building);
     }
 
+    for (TiXmlElement* renElem = root->FirstChildElement("RENOVATION");
+     renElem != nullptr;
+     renElem = renElem->NextSiblingElement("RENOVATION")) {
+
+        const char* room = renElem->FirstChildElement("ROOM") ?
+                           renElem->FirstChildElement("ROOM")->GetText() : nullptr;
+
+        const char* start = renElem->FirstChildElement("START") ?
+                            renElem->FirstChildElement("START")->GetText() : nullptr;
+
+        const char* end = renElem->FirstChildElement("END") ?
+                          renElem->FirstChildElement("END")->GetText() : nullptr;
+
+        if (!room || !start || !end) {
+            errors.push_back("RENOVATION met ontbrekende velden");
+            continue;
+        }
+
+        planner.addRenovation(room, start, end);
+     }
+
     for (TiXmlElement* meetElem = root->FirstChildElement("MEETING");
          meetElem != nullptr;
          meetElem = meetElem->NextSiblingElement("MEETING")) {
@@ -124,6 +145,8 @@ bool XMLreader::readFile(const std::string& filename, MeetingPlanner& planner) {
     }
 
     printErrors();
+
+
 
     if (!planner.isConsistent()) {
         std::cerr << "Systeem is inconsistent. Programma wordt gestopt." << std::endl;
