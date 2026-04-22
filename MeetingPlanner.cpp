@@ -42,13 +42,28 @@ Building MeetingPlanner::findBuilding(const string &id) const {
     return Building("Unknown", "Unknown", "UnknownCampus");
 }
 
+#include <stdexcept>
+
 void MeetingPlanner::addMeeting(const string &label, const string &id, Room room, const string &dateStr) {
     int y, m, d;
     char dash;
     stringstream ss(dateStr);
     ss >> y >> dash >> m >> dash >> d;
 
-    chrono::year_month_day date{chrono::year{y}, chrono::month{(unsigned)m}, chrono::day{(unsigned)d}};
+    chrono::year_month_day date{
+        chrono::year{y},
+        chrono::month{(unsigned)m},
+        chrono::day{(unsigned)d}
+    };
+
+    for (const auto& ren : renovations) {
+        if (room.getIdentifier() == ren.getRoomId()) {
+            if (date >= ren.getStart() && date <= ren.getEnd()) {
+                throw std::invalid_argument("Room is under renovation on this date");
+            }
+        }
+    }
+
     meetings.emplace_back(label, id, room, date);
 }
 

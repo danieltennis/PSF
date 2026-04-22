@@ -82,3 +82,36 @@ TEST(MeetingPlannerTest, TestInconsistentCapacity)
 
     ASSERT_FALSE(result);
 }
+
+TEST(MeetingPlannerTest, TestAddMeetingDuringRenovationThrows)
+{
+    MeetingPlanner planner;
+
+    planner.addRoom("Room A", "A1", 10, "5", "4");
+    planner.addRenovation("A1", "2026-05-20", "2026-05-25");
+
+    Room room = planner.findRoom("A1");
+
+    EXPECT_THROW(
+        planner.addMeeting("Weekly meeting", "M1", room, "2026-05-22"),
+        std::invalid_argument
+    );
+}
+
+TEST(MeetingPlannerTest, TestMeetingOutsideRenovation)
+{
+    MeetingPlanner* planner = new MeetingPlanner();
+
+    planner->addRoom("Room A", "A1", 10, "5", "4");
+
+    planner->addRenovation("A1", "2026-05-20", "2026-05-25");
+
+    Room room = planner->findRoom("A1");
+
+    // Buiten renovatie
+    planner->addMeeting("Weekly meeting", "M1", room, "2026-05-30");
+
+    bool result = planner->isConsistent();
+
+    ASSERT_TRUE(result);
+}
