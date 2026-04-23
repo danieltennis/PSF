@@ -35,7 +35,7 @@ public:
    void addBuilding(const std::string& name, const std::string& id, const std::string& campusId);
    Building findBuilding(const std::string& id) const;
 
-   
+
    void addMeeting(const string &label, const string &id, Room room, const string &dateStr, bool catering);
 
 
@@ -47,6 +47,12 @@ public:
    void addRenovation(const std::string& roomId,const std::string& start,const std::string& end);
 
    void addCatering(const std::string& campusId, int co2);
+
+   int getCO2ForCampus(const std::string &campusId) const;
+
+
+
+   void writeAll(std::ostream& out) const;
 
    void printAll() const;
    void Write_Output(const std::string &filename) const;

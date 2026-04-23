@@ -116,7 +116,7 @@ bool XMLreader::readFile(const std::string& filename, MeetingPlanner& planner) {
                              catElem->FirstChildElement("CO2")->GetText() : nullptr;
 
         if (!campus || !co2Str) {
-            errors.push_back("CATERING met ontbrekende velden");
+            errors.emplace_back("CATERING met ontbrekende velden");
             continue;
         }
 
@@ -124,12 +124,12 @@ bool XMLreader::readFile(const std::string& filename, MeetingPlanner& planner) {
         try {
             co2 = std::stoi(co2Str);
         } catch (...) {
-            errors.push_back("CATERING heeft ongeldige CO2 waarde");
+            errors.emplace_back("CATERING heeft ongeldige CO2 waarde");
             continue;
         }
 
         if (co2 <= 0) {
-            errors.push_back("CATERING CO2 moet > 0 zijn");
+            errors.emplace_back("CATERING CO2 moet > 0 zijn");
             continue;
         }
 
@@ -156,11 +156,11 @@ bool XMLreader::readFile(const std::string& filename, MeetingPlanner& planner) {
                            meetElem->FirstChildElement("DATE")->GetText() : nullptr;
         const char* cateringStr = meetElem->FirstChildElement("CATERING") ?
                           meetElem->FirstChildElement("CATERING")->GetText() : "false";
-        bool catering = std::string(cateringStr) == "true";
+        bool catering = std::string(cateringStr) == "TRUE";
 
 
         if (!label || !id || !room || !date) {
-            errors.push_back("MEETING met ontbrekende velden");
+            errors.emplace_back("MEETING met ontbrekende velden");
             continue;
         }
 
