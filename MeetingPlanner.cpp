@@ -44,17 +44,19 @@ Building MeetingPlanner::findBuilding(const string &id) const {
 
 #include <stdexcept>
 
-void MeetingPlanner::addMeeting(const string &label, const string &id, Room room, const string &dateStr) {
+void MeetingPlanner::addMeeting(const std::string &label,const std::string &id,Room room,const std::string &dateStr,bool catering)
+{
     int y, m, d;
     char dash;
-    stringstream ss(dateStr);
+    std::stringstream ss(dateStr);
     ss >> y >> dash >> m >> dash >> d;
 
-    chrono::year_month_day date{
-        chrono::year{y},
-        chrono::month{(unsigned)m},
-        chrono::day{(unsigned)d}
+    std::chrono::year_month_day date{
+        std::chrono::year{y},
+        std::chrono::month{(unsigned)m},
+        std::chrono::day{(unsigned)d}
     };
+
 
     for (const auto& ren : renovations) {
         if (room.getIdentifier() == ren.getRoomId()) {
@@ -64,7 +66,7 @@ void MeetingPlanner::addMeeting(const string &label, const string &id, Room room
         }
     }
 
-    meetings.emplace_back(label, id, room, date);
+    meetings.emplace_back(label, id, room, date, catering);
 }
 
 void MeetingPlanner::addParticipation(const string &meetingId, const string &user) {
@@ -109,6 +111,10 @@ void MeetingPlanner::addRenovation(const string& roomId,const string& startStr,c
     chrono::year_month_day end{chrono::year{y2}, chrono::month{(unsigned)m2}, chrono::day{(unsigned)d2}};
 
     renovations.emplace_back(roomId, start, end);
+}
+
+void MeetingPlanner::addCatering(const std::string& campusId, int co2) {
+    caterings.emplace_back(campusId, co2);
 }
 
 void MeetingPlanner::Write_Output(const string &filename) const {

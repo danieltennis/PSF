@@ -105,6 +105,43 @@ bool XMLreader::readFile(const std::string& filename, MeetingPlanner& planner) {
         planner.addRenovation(room, start, end);
      }
 
+    for (TiXmlElement* catElem = root->FirstChildElement("CATERING");
+     catElem != nullptr;
+     catElem = catElem->NextSiblingElement("CATERING")) {
+
+        const char* campus = catElem->FirstChildElement("CAMPUS") ?
+                             catElem->FirstChildElement("CAMPUS")->GetText() : nullptr;
+
+        const char* co2Str = catElem->FirstChildElement("CO2") ?
+                             catElem->FirstChildElement("CO2")->GetText() : nullptr;
+
+        if (!campus || !co2Str) {
+            errors.push_back("CATERING met ontbrekende velden");
+            continue;
+        }
+
+        int co2;
+        try {
+            co2 = std::stoi(co2Str);
+        } catch (...) {
+            errors.push_back("CATERING heeft ongeldige CO2 waarde");
+            continue;
+        }
+
+        if (co2 <= 0) {
+            errors.push_back("CATERING CO2 moet > 0 zijn");
+            continue;
+        }
+
+        Campus c = planner.findCampus(campus);
+        if (c.getIdentifier() == "Unknown") {
+            errors.push_back("CATERING verwijst naar onbekende campus: " + std::string(campus));
+            continue;
+        }
+
+        planner.addCatering(campus, co2);
+     }
+
     for (TiXmlElement* meetElem = root->FirstChildElement("MEETING");
          meetElem != nullptr;
          meetElem = meetElem->NextSiblingElement("MEETING")) {
@@ -117,6 +154,10 @@ bool XMLreader::readFile(const std::string& filename, MeetingPlanner& planner) {
                            meetElem->FirstChildElement("ROOM")->GetText() : nullptr;
         const char* date = meetElem->FirstChildElement("DATE") ?
                            meetElem->FirstChildElement("DATE")->GetText() : nullptr;
+        const char* cateringStr = meetElem->FirstChildElement("CATERING") ?
+                          meetElem->FirstChildElement("CATERING")->GetText() : "false";
+        bool catering = std::string(cateringStr) == "true";
+
 
         if (!label || !id || !room || !date) {
             errors.push_back("MEETING met ontbrekende velden");
@@ -124,7 +165,7 @@ bool XMLreader::readFile(const std::string& filename, MeetingPlanner& planner) {
         }
 
         Room actualRoom = planner.findRoom(room);
-        planner.addMeeting(label, id, actualRoom, date);
+        planner.addMeeting(label, id, actualRoom, date,catering);
     }
 
     for (TiXmlElement* partElem = root->FirstChildElement("PARTICIPATION");

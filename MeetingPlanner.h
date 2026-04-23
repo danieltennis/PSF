@@ -8,6 +8,7 @@
 #include "Participation.h"
 #include "Campus.h"
 #include "Building.h"
+#include "Catering.h"
 #include "Renovation.h"
 
 class MeetingPlanner {
@@ -18,6 +19,7 @@ private:
    std::vector<Campus> campuses;
    std::vector<Building> buildings;
    std::vector<Renovation> renovations;
+   std::vector<Catering> caterings;
 
 public:
 
@@ -33,15 +35,18 @@ public:
    void addBuilding(const std::string& name, const std::string& id, const std::string& campusId);
    Building findBuilding(const std::string& id) const;
 
+   
+   void addMeeting(const string &label, const string &id, Room room, const string &dateStr, bool catering);
 
-   void addMeeting(const std::string &label, const std::string &id, Room room, const std::string &dateStr);
+
+
    void addParticipation(const std::string &meetingId, const std::string &user);
    bool isConsistent() const;
 
 
-   void addRenovation(const std::string& roomId,
-                      const std::string& start,
-                      const std::string& end);
+   void addRenovation(const std::string& roomId,const std::string& start,const std::string& end);
+
+   void addCatering(const std::string& campusId, int co2);
 
    void printAll() const;
    void Write_Output(const std::string &filename) const;
