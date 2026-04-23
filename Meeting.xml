@@ -1,15 +1,30 @@
 <SYSTEM>
+
+    <!-- CAMPUSES -->
     <CAMPUS>
         <NAME>Main Campus</NAME>
         <IDENTIFIER>C1</IDENTIFIER>
     </CAMPUS>
 
+    <CAMPUS>
+        <NAME>Science Campus</NAME>
+        <IDENTIFIER>C2</IDENTIFIER>
+    </CAMPUS>
+
+    <!-- BUILDINGS -->
     <BUILDING>
         <NAME>Main Building</NAME>
         <IDENTIFIER>B1</IDENTIFIER>
         <CAMPUS>C1</CAMPUS>
     </BUILDING>
 
+    <BUILDING>
+        <NAME>Engineering Hall</NAME>
+        <IDENTIFIER>B2</IDENTIFIER>
+        <CAMPUS>C2</CAMPUS>
+    </BUILDING>
+
+    <!-- ROOMS -->
     <ROOM>
         <NAME>Room A</NAME>
         <IDENTIFIER>A1</IDENTIFIER>
@@ -18,6 +33,49 @@
         <BUILDING>B1</BUILDING>
     </ROOM>
 
+    <ROOM>
+        <NAME>Room B</NAME>
+        <IDENTIFIER>B1R</IDENTIFIER>
+        <CAPACITY>5</CAPACITY>
+        <CAMPUS>C1</CAMPUS>
+        <BUILDING>B1</BUILDING>
+    </ROOM>
+
+    <ROOM>
+        <NAME>Lab 1</NAME>
+        <IDENTIFIER>L1</IDENTIFIER>
+        <CAPACITY>20</CAPACITY>
+        <CAMPUS>C2</CAMPUS>
+        <BUILDING>B2</BUILDING>
+    </ROOM>
+
+    <!-- RENOVATIONS -->
+    <RENOVATION>
+        <ROOM>A1</ROOM>
+        <START>2026-05-20</START>
+        <END>2026-05-25</END>
+    </RENOVATION>
+
+    <RENOVATION>
+        <ROOM>L1</ROOM>
+        <START>2026-05-23</START>
+        <END>2026-05-26</END>
+    </RENOVATION>
+
+    <!-- CATERING -->
+    <CATERING>
+        <CAMPUS>C1</CAMPUS>
+        <CO2>20</CO2>
+    </CATERING>
+
+    <CATERING>
+        <CAMPUS>C2</CAMPUS>
+        <CO2>35</CO2>
+    </CATERING>
+
+    <!-- MEETINGS -->
+
+    <!-- ❌ Deze valt IN renovatie → moet error geven -->
     <MEETING>
         <LABEL>Weekly Meeting</LABEL>
         <IDENTIFIER>M1</IDENTIFIER>
@@ -26,8 +84,61 @@
         <CATERING>TRUE</CATERING>
     </MEETING>
 
+    <!-- ❌ Conflict (zelfde room + datum als M1) -->
+    <MEETING>
+        <LABEL>Project Meeting</LABEL>
+        <IDENTIFIER>M2</IDENTIFIER>
+        <ROOM>A1</ROOM>
+        <DATE>2026-05-22</DATE>
+        <CATERING>FALSE</CATERING>
+    </MEETING>
+
+    <!-- ✅ OK -->
+    <MEETING>
+        <LABEL>Small Team Sync</LABEL>
+        <IDENTIFIER>M3</IDENTIFIER>
+        <ROOM>B1R</ROOM>
+        <DATE>2026-05-23</DATE>
+        <CATERING>FALSE</CATERING>
+    </MEETING>
+
+    <!-- ❌ Deze valt IN renovatie van L1 -->
+    <MEETING>
+        <LABEL>Research Discussion</LABEL>
+        <IDENTIFIER>M4</IDENTIFIER>
+        <ROOM>L1</ROOM>
+        <DATE>2026-05-24</DATE>
+        <CATERING>TRUE</CATERING>
+    </MEETING>
+
+    <!-- ✅ Buiten renovatie -->
+    <MEETING>
+        <LABEL>Late Meeting</LABEL>
+        <IDENTIFIER>M5</IDENTIFIER>
+        <ROOM>A1</ROOM>
+        <DATE>2026-05-30</DATE>
+        <CATERING>TRUE</CATERING>
+    </MEETING>
+
+    <!-- PARTICIPATIONS -->
     <PARTICIPATION>
         <MEETING>M1</MEETING>
         <USER>Peter Selie</USER>
     </PARTICIPATION>
+
+    <PARTICIPATION>
+        <MEETING>M3</MEETING>
+        <USER>Alice</USER>
+    </PARTICIPATION>
+
+    <PARTICIPATION>
+        <MEETING>M3</MEETING>
+        <USER>Bob</USER>
+    </PARTICIPATION>
+
+    <PARTICIPATION>
+        <MEETING>M5</MEETING>
+        <USER>Charlie</USER>
+    </PARTICIPATION>
+
 </SYSTEM>

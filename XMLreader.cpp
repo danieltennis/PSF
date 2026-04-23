@@ -165,7 +165,12 @@ bool XMLreader::readFile(const std::string& filename, MeetingPlanner& planner) {
         }
 
         Room actualRoom = planner.findRoom(room);
-        planner.addMeeting(label, id, actualRoom, date,catering);
+        try {
+            planner.addMeeting(label, id, actualRoom, date, catering);
+        } catch (const std::exception& e) {
+            errors.push_back("MEETING fout (" + std::string(id) + "): " + e.what());
+        }
+
     }
 
     for (TiXmlElement* partElem = root->FirstChildElement("PARTICIPATION");

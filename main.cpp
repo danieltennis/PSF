@@ -20,5 +20,7 @@ int main() {
         std::cout << "Er waren fouten bij het inlezen van de XML." << std::endl;
     }
 
+    planner.processMeetings();
+
     return 0;
 }

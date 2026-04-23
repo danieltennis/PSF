@@ -36,7 +36,7 @@ public:
    Building findBuilding(const std::string& id) const;
 
 
-   void addMeeting(const string &label, const string &id, Room room, const string &dateStr, bool catering);
+   void addMeeting(const string &label, const string &id, const Room& room, const string &dateStr, bool catering);
 
 
 
@@ -56,6 +56,8 @@ public:
 
    void printAll() const;
    void Write_Output(const std::string &filename) const;
+
+   void processMeetings() const;
 };
 
 #endif //PSF_MEETINGPLANNER_H

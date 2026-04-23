@@ -17,7 +17,7 @@ Room MeetingPlanner::findRoom(const string &id) const {
         if (r.getIdentifier() == id)
             return r;
     cerr << "Room niet gevonden: " << id << endl;
-    return Room("Unknown", id, 0, "UnknownCampus", "UnknownBuilding");
+    return {"Unknown", id, 0, "UnknownCampus", "UnknownBuilding"};
 }
 
 void MeetingPlanner::addCampus(const string &name, const string &id) {
@@ -28,7 +28,7 @@ Campus MeetingPlanner::findCampus(const string &id) const {
     for (const auto& c : campuses)
         if (c.getIdentifier() == id)
             return c;
-    return Campus("Unknown", "Unknown");
+    return {"Unknown", "Unknown"};
 }
 
 void MeetingPlanner::addBuilding(const string &name, const string &id, const string &campusId) {
@@ -39,12 +39,12 @@ Building MeetingPlanner::findBuilding(const string &id) const {
     for (const auto& b : buildings)
         if (b.getIdentifier() == id)
             return b;
-    return Building("Unknown", "Unknown", "UnknownCampus");
+    return {"Unknown", "Unknown", "UnknownCampus"};
 }
 
 #include <stdexcept>
 
-void MeetingPlanner::addMeeting(const std::string &label,const std::string &id,Room room,const std::string &dateStr,bool catering)
+void MeetingPlanner::addMeeting(const std::string &label,const std::string &id,const Room& room,const std::string &dateStr,bool catering)
 {
     int y, m, d;
     char dash;
@@ -139,6 +139,37 @@ void MeetingPlanner::Write_Output(const string &filename) const {
 
 void MeetingPlanner::printAll() const {
     writeAll(std::cout);
+}
+
+void MeetingPlanner::processMeetings() const {
+
+    for (size_t i = 0; i < meetings.size(); i++) {
+
+        const Meeting& current = meetings[i];
+        bool conflict = false;
+
+        for (size_t j = 0; j < meetings.size(); j++) {
+
+            if (i == j) continue;
+
+            const Meeting& other = meetings[j];
+
+            if (current.getRoom().getIdentifier() == other.getRoom().getIdentifier() &&
+                current.getDate() == other.getDate()) {
+
+                conflict = true;
+                break;
+                }
+        }
+
+        if (conflict) {
+            std::cout << "Error: Meeting " << current.getIdentifier()
+                      << " kan niet doorgaan (room bezet)" << std::endl;
+        } else {
+            std::cout << "Meeting " << current.getIdentifier()
+                      << " heeft plaatsgevonden." << std::endl;
+        }
+    }
 }
 
 void MeetingPlanner::writeAll(std::ostream& out) const {
