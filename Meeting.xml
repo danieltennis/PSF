@@ -75,7 +75,6 @@
 
     <!-- MEETINGS -->
 
-    <!-- ❌ Deze valt IN renovatie → moet error geven -->
     <MEETING>
         <LABEL>Weekly Meeting</LABEL>
         <IDENTIFIER>M1</IDENTIFIER>
@@ -84,7 +83,6 @@
         <CATERING>TRUE</CATERING>
     </MEETING>
 
-    <!-- ❌ Conflict (zelfde room + datum als M1) -->
     <MEETING>
         <LABEL>Project Meeting</LABEL>
         <IDENTIFIER>M2</IDENTIFIER>
@@ -93,7 +91,6 @@
         <CATERING>FALSE</CATERING>
     </MEETING>
 
-    <!-- ✅ OK -->
     <MEETING>
         <LABEL>Small Team Sync</LABEL>
         <IDENTIFIER>M3</IDENTIFIER>
@@ -102,7 +99,6 @@
         <CATERING>FALSE</CATERING>
     </MEETING>
 
-    <!-- ❌ Deze valt IN renovatie van L1 -->
     <MEETING>
         <LABEL>Research Discussion</LABEL>
         <IDENTIFIER>M4</IDENTIFIER>
@@ -111,7 +107,6 @@
         <CATERING>TRUE</CATERING>
     </MEETING>
 
-    <!-- ✅ Buiten renovatie -->
     <MEETING>
         <LABEL>Late Meeting</LABEL>
         <IDENTIFIER>M5</IDENTIFIER>
@@ -140,5 +135,39 @@
         <MEETING>M5</MEETING>
         <USER>Charlie</USER>
     </PARTICIPATION>
+
+    <!-- ONLINE MEETINGS -->
+
+    <MEETING>
+        <LABEL>Online Standup</LABEL>
+        <IDENTIFIER>M6</IDENTIFIER>
+        <DATE>2026-05-22</DATE>
+        <ONLINE>TRUE</ONLINE>
+        <CATERING>FALSE</CATERING>
+    </MEETING>
+
+    <MEETING>
+        <LABEL>Online Lunch Meeting</LABEL>
+        <IDENTIFIER>M7</IDENTIFIER>
+        <DATE>2026-05-23</DATE>
+        <ONLINE>TRUE</ONLINE>
+        <CATERING>TRUE</CATERING>
+    </MEETING>
+
+    <MEETING>
+        <LABEL>Remote Workshop</LABEL>
+        <IDENTIFIER>M8</IDENTIFIER>
+        <DATE>2026-05-24</DATE>
+        <ONLINE>TRUE</ONLINE>
+        <CATERING>FALSE</CATERING>
+    </MEETING>
+
+    <MEETING>
+        <LABEL>Parallel Online Meeting</LABEL>
+        <IDENTIFIER>M9</IDENTIFIER>
+        <DATE>2026-05-22</DATE>
+        <ONLINE>TRUE</ONLINE>
+        <CATERING>FALSE</CATERING>
+    </MEETING>
 
 </SYSTEM>

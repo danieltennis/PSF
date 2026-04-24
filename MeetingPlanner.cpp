@@ -44,7 +44,7 @@ Building MeetingPlanner::findBuilding(const string &id) const {
 
 #include <stdexcept>
 
-void MeetingPlanner::addMeeting(const std::string &label,const std::string &id,const Room& room,const std::string &dateStr,bool catering)
+void MeetingPlanner::addMeeting(const std::string &label,const std::string &id,const Room& room,const std::string &dateStr,bool catering,bool online)
 {
     int y, m, d;
     char dash;
@@ -58,15 +58,22 @@ void MeetingPlanner::addMeeting(const std::string &label,const std::string &id,c
     };
 
 
-    for (const auto& ren : renovations) {
-        if (room.getIdentifier() == ren.getRoomId()) {
-            if (date >= ren.getStart() && date <= ren.getEnd()) {
-                throw std::invalid_argument("Room is under renovation on this date");
+    if (!online) {
+        for (const auto& ren : renovations) {
+            if (room.getIdentifier() == ren.getRoomId()) {
+                if (date >= ren.getStart() && date <= ren.getEnd()) {
+                    throw std::invalid_argument("Room is under renovation on this date");
+                }
             }
         }
     }
 
-    meetings.emplace_back(label, id, room, date, catering);
+    if (online && catering) {
+        throw std::invalid_argument("Online meeting can not have catering");
+    }
+
+    meetings.emplace_back(label, id, room, date, catering,online);
+
 }
 
 void MeetingPlanner::addParticipation(const string &meetingId, const string &user) {
@@ -81,16 +88,19 @@ bool MeetingPlanner::isConsistent() const {
             if (p.getMeetingIdentifier() == m.getIdentifier())
                 count++;
 
-        if (count > m.getRoom().getCapacity())
-            return false;
+        if (!m.isOnline()) {
+            if (count > m.getRoom().getCapacity())
+                return false;
 
-        for (const auto& ren : renovations) {
-            if (m.getRoom().getIdentifier() == ren.getRoomId()) {
-                if (m.getDate() >= ren.getStart() && m.getDate() <= ren.getEnd()) {
-                    return false;
+            for (const auto& ren : renovations) {
+                if (m.getRoom().getIdentifier() == ren.getRoomId()) {
+                    if (m.getDate() >= ren.getStart() && m.getDate() <= ren.getEnd()) {
+                        return false;
+                    }
                 }
             }
         }
+        
     }
     return true;
 }
@@ -154,12 +164,13 @@ void MeetingPlanner::processMeetings() const {
 
             const Meeting& other = meetings[j];
 
-            if (current.getRoom().getIdentifier() == other.getRoom().getIdentifier() &&
-                current.getDate() == other.getDate()) {
-
-                conflict = true;
-                break;
-                }
+            if (!current.isOnline() && !other.isOnline()) {
+                if (current.getRoom().getIdentifier() == other.getRoom().getIdentifier() &&
+                    current.getDate() == other.getDate()) {
+                    conflict = true;
+                    break;
+                    }
+            }
         }
 
         if (conflict) {

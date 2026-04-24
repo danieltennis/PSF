@@ -158,15 +158,36 @@ bool XMLreader::readFile(const std::string& filename, MeetingPlanner& planner) {
                           meetElem->FirstChildElement("CATERING")->GetText() : "false";
         bool catering = std::string(cateringStr) == "TRUE";
 
+        const char* onlineStr = meetElem->FirstChildElement("ONLINE") ?
+            meetElem->FirstChildElement("ONLINE")->GetText() : "false";
 
-        if (!label || !id || !room || !date) {
+        bool online = std::string(onlineStr) == "TRUE";
+
+
+        if (!label || !id || !date) {
             errors.emplace_back("MEETING met ontbrekende velden");
             continue;
         }
 
-        Room actualRoom = planner.findRoom(room);
+        if (online && catering) {
+            errors.emplace_back("MEETING " + std::string(id) + ": online meetings kunnen geen catering hebben");
+            continue;
+        }
+
+        // dummy room
+        Room actualRoom = {"Online", "ONLINE", 0, "NONE", "NONE"};
+        if (!online) {
+            if (!room) {
+                errors.emplace_back("MEETING " + std::string(id) + ": ontbrekende room");
+                continue;
+            }
+            actualRoom = planner.findRoom(room);
+
+        }
+
+
         try {
-            planner.addMeeting(label, id, actualRoom, date, catering);
+            planner.addMeeting(label, id, actualRoom, date, catering,online);
         } catch (const std::exception& e) {
             errors.push_back("MEETING fout (" + std::string(id) + "): " + e.what());
         }

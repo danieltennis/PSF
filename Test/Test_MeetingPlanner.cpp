@@ -40,7 +40,7 @@ TEST(MeetingPlannerTest, TestAddMeeting)
 
     Room room = planner->findRoom("A1");
 
-    planner->addMeeting("Weekly meeting", "M1", room, "2026-05-22", false);
+    planner->addMeeting("Weekly meeting", "M1", room, "2026-05-22", false, false);
 
     bool result = planner->isConsistent();
 
@@ -55,7 +55,7 @@ TEST(MeetingPlannerTest, TestAddParticipation)
 
     Room room = planner->findRoom("A1");
 
-    planner->addMeeting("Weekly meeting", "M1", room, "2026-05-22", false);
+    planner->addMeeting("Weekly meeting", "M1", room, "2026-05-22", false, false);
 
     planner->addParticipation("M1", "Peter Selie");
 
@@ -72,7 +72,7 @@ TEST(MeetingPlannerTest, TestInconsistentCapacity)
 
     Room room = planner->findRoom("A1");
 
-    planner->addMeeting("Big meeting", "M1", room, "2026-05-22", false);
+    planner->addMeeting("Big meeting", "M1", room, "2026-05-22", false, false);
 
     planner->addParticipation("M1", "User1");
     planner->addParticipation("M1", "User2");
@@ -93,7 +93,7 @@ TEST(MeetingPlannerTest, TestAddMeetingDuringRenovationThrows)
     Room room = planner.findRoom("A1");
 
     EXPECT_THROW(
-        planner.addMeeting("Weekly meeting", "M1", room, "2026-05-22", false),
+        planner.addMeeting("Weekly meeting", "M1", room, "2026-05-22", false, false),
         std::invalid_argument
     );
 }
@@ -109,7 +109,7 @@ TEST(MeetingPlannerTest, TestMeetingOutsideRenovation)
     Room room = planner->findRoom("A1");
 
     // Buiten renovatie
-    planner->addMeeting("Weekly meeting", "M1", room, "2026-05-30", false);
+    planner->addMeeting("Weekly meeting", "M1", room, "2026-05-30", false, false);
 
     bool result = planner->isConsistent();
 

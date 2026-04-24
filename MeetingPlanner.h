@@ -36,7 +36,7 @@ public:
    Building findBuilding(const std::string& id) const;
 
 
-   void addMeeting(const string &label, const string &id, const Room& room, const string &dateStr, bool catering);
+   void addMeeting(const string &label, const string &id, const Room& room, const string &dateStr, bool catering,bool online);
 
 
 

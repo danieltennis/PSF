@@ -13,12 +13,14 @@ private:
     Room room;
     std::chrono::year_month_day date;
     bool catering;
+    bool online;
+
 
 
 public:
     // CONSTRUCTOR
-    Meeting(std::string l, std::string i, Room r, std::chrono::year_month_day d,bool c = false)
-        : label(l), identifier(i), room(r), date(d),catering(c) {}
+    Meeting(std::string l, std::string i, Room r, std::chrono::year_month_day d,bool c = false,bool online = false)
+        : label(l), identifier(i), room(r), date(d),catering(c),online (online) {}
 
     // GETTERS
     std::string getLabel() const { return label; }
@@ -26,6 +28,7 @@ public:
     Room getRoom() const { return room; }
     std::chrono::year_month_day getDate() const { return date; }
     bool hasCatering() const { return catering; }
+    bool isOnline() const {return online;}
 
     // SETTERS
     void setLabel(std::string l) { this->label = l; }
