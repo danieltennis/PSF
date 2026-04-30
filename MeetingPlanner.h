@@ -50,6 +50,8 @@ public:
 
    int getCO2ForCampus(const std::string &campusId) const;
 
+   static int getMeetingCO2(const Meeting& meeting) ;
+   int getParticipantCount(const std::string& meetingId) const;
 
 
    void writeAll(std::ostream& out) const;
