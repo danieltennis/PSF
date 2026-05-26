@@ -1,0 +1,5 @@
+if(EXISTS "/home/mohammed/CLionProjects/PSF/runUnitTests[1]_tests.cmake")
+  include("/home/mohammed/CLionProjects/PSF/runUnitTests[1]_tests.cmake")
+else()
+  add_test(runUnitTests_NOT_BUILT runUnitTests_NOT_BUILT)
+endif()

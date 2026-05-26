@@ -8,7 +8,7 @@ int main() {
     MeetingPlanner planner;
     XMLreader reader;
 
-    if (reader.readFile("Meeting.xml", planner)) {
+    if (reader.readFile("/home/mohammed/CLionProjects/PSF/Meeting.xml", planner)) {
 
 
         std::cout << "XML parser werkte succesvol!\n" << std::endl;

@@ -1,0 +1,285 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="BackendCodeEditorMiscSettings">
+    <option name="/Default/Environment/Hierarchy/GeneratedFilesCacheKey/Timestamp/@EntryValue" value="6" type="long" />
+    <option name="/Default/Housekeeping/FeatureSuggestion/FeatureSuggestionManager/DisabledSuggesters/=SwitchToGoToActionSuggester/@EntryIndexedValue" value="true" type="bool" />
+    <option name="/Default/Housekeeping/GlobalSettingsUpgraded/IsUpgraded/@EntryValue" value="true" type="bool" />
+    <option name="/Default/RiderDebugger/RiderRestoreDecompile/RestoreDecompileSetting/@EntryValue" value="false" type="bool" />
+  </component>
+  <component name="CMakePresetLoader"><![CDATA[{
+  "useNewFormat": true
+}]]></component>
+  <component name="CMakeRunConfigurationManager">
+    <generated>
+      <config projectName="PSF" targetName="runUnitTests" />
+      <config projectName="PSF" targetName="gmock_main" />
+      <config projectName="PSF" targetName="PSF" />
+      <config projectName="PSF" targetName="gmock" />
+      <config projectName="PSF" targetName="app" />
+      <config projectName="PSF" targetName="gtest" />
+      <config projectName="PSF" targetName="gtest_main" />
+    </generated>
+  </component>
+  <component name="CMakeSettings">
+    <configurations>
+      <configuration PROFILE_NAME="Debug" ENABLED="true" CONFIG_NAME="Debug" />
+    </configurations>
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="75c4fe8c-f769-4065-b4ab-2bc20ac5d562" name="Changes" comment="3.5 CO2 tracking toegevoegd">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CMakeLists.txt" beforeDir="false" afterPath="$PROJECT_DIR$/CMakeLists.txt" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ClangdSettings">
+    <option name="formatViaClangd" value="false" />
+  </component>
+  <component name="ExecutionTargetManager" SELECTED_TARGET="CMakeBuildProfile:Debug" />
+  <component name="GithubDefaultAccount">
+    <option name="defaultAccountId" value="095cb1fd-689a-407b-a69f-89069a2d6168" />
+  </component>
+  <component name="MacroExpansionManager">
+    <option name="directoryName" value="yi2xSgFz" />
+  </component>
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="RunManager" selected="CMake Application.app">
+    <configuration default="true" type="CLionExternalRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true">
+      <method v="2">
+        <option name="CLION.EXTERNAL.BUILD" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeBoostTestRunConfigurationType" factoryName="Boost Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeCatchTestRunConfigurationType" factoryName="Catch Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeDoctestTestRunConfigurationType" factoryName="doctest Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration default="true" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="runUnitTests" type="CMakeGoogleTestRunConfigurationType" factoryName="Google Test" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PSF" TARGET_NAME="runUnitTests" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="PSF" RUN_TARGET_NAME="runUnitTests" TEST_MODE="SUITE_TEST">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+        <option name="BeforeTestRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="app" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PSF" TARGET_NAME="app" CONFIG_NAME="Debug" RUN_TARGET_PROJECT_NAME="PSF" RUN_TARGET_NAME="app">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gmock" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PSF" TARGET_NAME="gmock" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gmock_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PSF" TARGET_NAME="gmock_main" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gtest" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PSF" TARGET_NAME="gtest" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="gtest_main" type="CMakeRunConfiguration" factoryName="Application" REDIRECT_INPUT="false" ELEVATE="false" USE_EXTERNAL_CONSOLE="false" EMULATE_TERMINAL="false" PASS_PARENT_ENVS_2="true" PROJECT_NAME="PSF" TARGET_NAME="gtest_main" CONFIG_NAME="Debug">
+      <method v="2">
+        <option name="com.jetbrains.cidr.execution.CidrBuildBeforeRunTaskProvider$BuildBeforeRunTask" enabled="true" />
+      </method>
+    </configuration>
+    <list>
+      <item itemvalue="CMake Application.app" />
+      <item itemvalue="CMake Application.gmock" />
+      <item itemvalue="CMake Application.gmock_main" />
+      <item itemvalue="CMake Application.gtest" />
+      <item itemvalue="CMake Application.gtest_main" />
+      <item itemvalue="Google Test.runUnitTests" />
+    </list>
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="75c4fe8c-f769-4065-b4ab-2bc20ac5d562" name="Changes" comment="" />
+      <created>1772112695097</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1772112695097</updated>
+      <workItem from="1772112696328" duration="1849000" />
+      <workItem from="1772543626146" duration="64000" />
+      <workItem from="1772715189565" duration="590000" />
+      <workItem from="1772720102732" duration="1779000" />
+      <workItem from="1773319696912" duration="8762000" />
+      <workItem from="1773744709308" duration="5243000" />
+      <workItem from="1773931225979" duration="2042000" />
+      <workItem from="1774529098420" duration="262000" />
+      <workItem from="1774529370460" duration="10169000" />
+      <workItem from="1776333257456" duration="15000" />
+      <workItem from="1776855936729" duration="8283000" />
+      <workItem from="1776867266762" duration="716000" />
+      <workItem from="1776921341584" duration="21899000" />
+      <workItem from="1777007640541" duration="1523000" />
+      <workItem from="1777550981245" duration="3624000" />
+      <workItem from="1777874396968" duration="231000" />
+      <workItem from="1778052190060" duration="2736000" />
+      <workItem from="1778074740583" duration="1087000" />
+      <workItem from="1778248811014" duration="290000" />
+      <workItem from="1779788163951" duration="6440000" />
+    </task>
+    <task id="LOCAL-00001" summary="XMLParser opgelost">
+      <option name="closed" value="true" />
+      <created>1773322558073</created>
+      <option name="number" value="00001" />
+      <option name="presentableId" value="LOCAL-00001" />
+      <option name="project" value="LOCAL" />
+      <updated>1773322558073</updated>
+    </task>
+    <task id="LOCAL-00002" summary="gtest opgelost">
+      <option name="closed" value="true" />
+      <created>1773326550542</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1773326550542</updated>
+    </task>
+    <task id="LOCAL-00003" summary="Building en Campus toegevoegd">
+      <option name="closed" value="true" />
+      <created>1774536192320</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1774536192320</updated>
+    </task>
+    <task id="LOCAL-00004" summary="Building en Campus testen toegevoegd + Meetingplanner geupdate">
+      <option name="closed" value="true" />
+      <created>1774538003680</created>
+      <option name="number" value="00004" />
+      <option name="presentableId" value="LOCAL-00004" />
+      <option name="project" value="LOCAL" />
+      <updated>1774538003680</updated>
+    </task>
+    <task id="LOCAL-00005" summary="Building en Campustesten daadwerkelijk toegevoegd">
+      <option name="closed" value="true" />
+      <created>1776860766283</created>
+      <option name="number" value="00005" />
+      <option name="presentableId" value="LOCAL-00005" />
+      <option name="project" value="LOCAL" />
+      <updated>1776860766283</updated>
+    </task>
+    <task id="LOCAL-00006" summary="Renovations toegevoegd">
+      <option name="closed" value="true" />
+      <created>1776861647064</created>
+      <option name="number" value="00006" />
+      <option name="presentableId" value="LOCAL-00006" />
+      <option name="project" value="LOCAL" />
+      <updated>1776861647064</updated>
+    </task>
+    <task id="LOCAL-00007" summary="Renovation tests toegevoegd">
+      <option name="closed" value="true" />
+      <created>1776862634587</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1776862634587</updated>
+    </task>
+    <task id="LOCAL-00008" summary="CMakeLists.txt aangepast">
+      <option name="closed" value="true" />
+      <created>1776864402542</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1776864402542</updated>
+    </task>
+    <task id="LOCAL-00009" summary="Catering klasse toegevoegd">
+      <option name="closed" value="true" />
+      <created>1776924218517</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1776924218518</updated>
+    </task>
+    <task id="LOCAL-00010" summary="Simple output toegevoegd">
+      <option name="closed" value="true" />
+      <created>1776928992861</created>
+      <option name="number" value="00010" />
+      <option name="presentableId" value="LOCAL-00010" />
+      <option name="project" value="LOCAL" />
+      <updated>1776928992861</updated>
+    </task>
+    <task id="LOCAL-00011" summary="3.3 Renovaties verwerken toegevoegd">
+      <option name="closed" value="true" />
+      <created>1776950669900</created>
+      <option name="number" value="00011" />
+      <option name="presentableId" value="LOCAL-00011" />
+      <option name="project" value="LOCAL" />
+      <updated>1776950669900</updated>
+    </task>
+    <task id="LOCAL-00012" summary="3.4 Simulating online meetings toegevoegd">
+      <option name="closed" value="true" />
+      <created>1777007904673</created>
+      <option name="number" value="00012" />
+      <option name="presentableId" value="LOCAL-00012" />
+      <option name="project" value="LOCAL" />
+      <updated>1777007904673</updated>
+    </task>
+    <task id="LOCAL-00013" summary="3.5 CO2 tracking toegevoegd">
+      <option name="closed" value="true" />
+      <created>1777553877453</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1777553877453</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="VCPKGProject">
+    <isAutomaticCheckingOnLaunch value="false" />
+    <isAutomaticFoundErrors value="true" />
+    <isAutomaticReloadCMake value="true" />
+    <isAutomaticBootstrapAfterUpdate value="false" />
+  </component>
+  <component name="VcsManagerConfiguration">
+    <MESSAGE value="XMLParser opgelost" />
+    <MESSAGE value="gtest opgelost" />
+    <MESSAGE value="Building en Campus toegevoegd" />
+    <MESSAGE value="Building en Campus testen toegevoegd + Meetingplanner geupdate" />
+    <MESSAGE value="Building en Campustesten daadwerkelijk toegevoegd" />
+    <MESSAGE value="Renovations toegevoegd" />
+    <MESSAGE value="Renovation tests toegevoegd" />
+    <MESSAGE value="CMakeLists.txt aangepast" />
+    <MESSAGE value="Catering klasse toegevoegd" />
+    <MESSAGE value="Simple output toegevoegd" />
+    <MESSAGE value="3.3 Renovaties verwerken toegevoegd" />
+    <MESSAGE value="3.4 Simulating online meetings toegevoegd" />
+    <MESSAGE value="3.5 CO2 tracking toegevoegd" />
+    <option name="LAST_COMMIT_MESSAGE" value="3.5 CO2 tracking toegevoegd" />
+  </component>
+</project>
