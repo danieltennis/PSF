@@ -303,6 +303,7 @@ CMakeFiles/app.dir/Catering.cpp.o: Catering.cpp \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
 
 CMakeFiles/app.dir/Meeting.cpp.o: Meeting.cpp \
+  DesignByContract.h \
   Meeting.h \
   Room.h \
   /usr/include/alloca.h \
@@ -436,6 +437,7 @@ CMakeFiles/app.dir/Meeting.cpp.o: Meeting.cpp \
   /usr/include/c++/13/span \
   /usr/include/c++/13/sstream \
   /usr/include/c++/13/stdexcept \
+  /usr/include/c++/13/stdlib.h \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
   /usr/include/c++/13/string_view \
@@ -551,6 +553,7 @@ CMakeFiles/app.dir/MeetingPlanner.cpp.o: MeetingPlanner.cpp \
   Building.h \
   Campus.h \
   Catering.h \
+  DesignByContract.h \
   Meeting.h \
   MeetingPlanner.h \
   Participation.h \
@@ -690,6 +693,7 @@ CMakeFiles/app.dir/MeetingPlanner.cpp.o: MeetingPlanner.cpp \
   /usr/include/c++/13/span \
   /usr/include/c++/13/sstream \
   /usr/include/c++/13/stdexcept \
+  /usr/include/c++/13/stdlib.h \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
   /usr/include/c++/13/string_view \
@@ -1197,6 +1201,7 @@ CMakeFiles/app.dir/Renovation.cpp.o: Renovation.cpp \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
 
 CMakeFiles/app.dir/Room.cpp.o: Room.cpp \
+  DesignByContract.h \
   Room.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
@@ -1290,6 +1295,7 @@ CMakeFiles/app.dir/Room.cpp.o: Room.cpp \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/pstl_config.h \
   /usr/include/c++/13/stdexcept \
+  /usr/include/c++/13/stdlib.h \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
   /usr/include/c++/13/string_view \
@@ -1396,6 +1402,7 @@ CMakeFiles/app.dir/XMLreader.cpp.o: XMLreader.cpp \
   Building.h \
   Campus.h \
   Catering.h \
+  DesignByContract.h \
   Meeting.h \
   MeetingPlanner.h \
   Participation.h \
@@ -1655,6 +1662,7 @@ CMakeFiles/app.dir/main.cpp.o: main.cpp \
   Building.h \
   Campus.h \
   Catering.h \
+  DesignByContract.h \
   Meeting.h \
   MeetingPlanner.h \
   Participation.h \
@@ -2471,8 +2479,6 @@ main.cpp:
 
 /usr/include/string.h:
 
-/usr/include/c++/13/stdlib.h:
-
 tinyxml_2_6_2/tinystr.h:
 
 XMLreader.h:
@@ -2484,6 +2490,8 @@ Room.cpp:
 Renovation.cpp:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h:
+
+/usr/include/c++/13/iostream:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
@@ -2622,8 +2630,6 @@ tinyxml_2_6_2/tinystr.cpp:
 /usr/include/c++/13/ext/alloc_traits.h:
 
 /usr/include/c++/13/new:
-
-/usr/include/c++/13/bits/alloc_traits.h:
 
 /usr/include/c++/13/bits/concept_check.h:
 
@@ -2905,6 +2911,14 @@ Catering.cpp:
 
 /usr/include/c++/13/bits/locale_facets_nonio.h:
 
+/usr/include/c++/13/bits/alloc_traits.h:
+
+DesignByContract.h:
+
+/usr/include/c++/13/utility:
+
+/usr/include/c++/13/bits/stl_heap.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h:
 
 /usr/include/c++/13/bits/ranges_base.h:
@@ -2979,10 +2993,6 @@ Meeting.h:
 
 /usr/include/c++/13/ratio:
 
-/usr/include/c++/13/utility:
-
-/usr/include/c++/13/bits/stl_heap.h:
-
 /usr/include/c++/13/bits/stl_tempbuf.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
@@ -3030,6 +3040,8 @@ Participation.h:
 Renovation.h:
 
 /usr/include/c++/13/stdexcept:
+
+/usr/include/c++/13/stdlib.h:
 
 /usr/include/c++/13/vector:
 
@@ -3096,5 +3108,3 @@ Building.h:
 MeetingPlanner.h:
 
 /usr/include/c++/13/bits/fstream.tcc:
-
-/usr/include/c++/13/iostream:

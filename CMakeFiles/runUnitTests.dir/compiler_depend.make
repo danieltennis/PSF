@@ -303,6 +303,7 @@ CMakeFiles/runUnitTests.dir/Catering.cpp.o: Catering.cpp \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stddef.h
 
 CMakeFiles/runUnitTests.dir/Meeting.cpp.o: Meeting.cpp \
+  DesignByContract.h \
   Meeting.h \
   Room.h \
   /usr/include/alloca.h \
@@ -436,6 +437,7 @@ CMakeFiles/runUnitTests.dir/Meeting.cpp.o: Meeting.cpp \
   /usr/include/c++/13/span \
   /usr/include/c++/13/sstream \
   /usr/include/c++/13/stdexcept \
+  /usr/include/c++/13/stdlib.h \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
   /usr/include/c++/13/string_view \
@@ -551,6 +553,7 @@ CMakeFiles/runUnitTests.dir/MeetingPlanner.cpp.o: MeetingPlanner.cpp \
   Building.h \
   Campus.h \
   Catering.h \
+  DesignByContract.h \
   Meeting.h \
   MeetingPlanner.h \
   Participation.h \
@@ -690,6 +693,7 @@ CMakeFiles/runUnitTests.dir/MeetingPlanner.cpp.o: MeetingPlanner.cpp \
   /usr/include/c++/13/span \
   /usr/include/c++/13/sstream \
   /usr/include/c++/13/stdexcept \
+  /usr/include/c++/13/stdlib.h \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
   /usr/include/c++/13/string_view \
@@ -1197,6 +1201,7 @@ CMakeFiles/runUnitTests.dir/Renovation.cpp.o: Renovation.cpp \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/stdint.h
 
 CMakeFiles/runUnitTests.dir/Room.cpp.o: Room.cpp \
+  DesignByContract.h \
   Room.h \
   /usr/include/alloca.h \
   /usr/include/asm-generic/errno-base.h \
@@ -1290,6 +1295,7 @@ CMakeFiles/runUnitTests.dir/Room.cpp.o: Room.cpp \
   /usr/include/c++/13/ostream \
   /usr/include/c++/13/pstl/pstl_config.h \
   /usr/include/c++/13/stdexcept \
+  /usr/include/c++/13/stdlib.h \
   /usr/include/c++/13/streambuf \
   /usr/include/c++/13/string \
   /usr/include/c++/13/string_view \
@@ -2153,6 +2159,7 @@ CMakeFiles/runUnitTests.dir/Test/Campus/Test_Campus.cpp.o: Test/Campus/Test_Camp
   /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h
 
 CMakeFiles/runUnitTests.dir/Test/Test.cpp.o: Test/Test.cpp \
+  DesignByContract.h \
   Room.h \
   _deps/googletest-src/googletest/include/gtest/gtest-assertion-result.h \
   _deps/googletest-src/googletest/include/gtest/gtest-death-test.h \
@@ -2533,6 +2540,7 @@ CMakeFiles/runUnitTests.dir/Test/Test.cpp.o: Test/Test.cpp \
   /usr/lib/gcc/x86_64-linux-gnu/13/include/syslimits.h
 
 CMakeFiles/runUnitTests.dir/Test/Test_Meeting.cpp.o: Test/Test_Meeting.cpp \
+  DesignByContract.h \
   Meeting.h \
   Room.h \
   _deps/googletest-src/googletest/include/gtest/gtest-assertion-result.h \
@@ -2923,6 +2931,7 @@ CMakeFiles/runUnitTests.dir/Test/Test_MeetingPlanner.cpp.o: Test/Test_MeetingPla
   Building.h \
   Campus.h \
   Catering.h \
+  DesignByContract.h \
   Meeting.h \
   MeetingPlanner.h \
   Participation.h \
@@ -4082,6 +4091,7 @@ CMakeFiles/runUnitTests.dir/Test/Test_XMLreader.cpp.o: Test/Test_XMLreader.cpp \
   Building.h \
   Campus.h \
   Catering.h \
+  DesignByContract.h \
   Meeting.h \
   MeetingPlanner.h \
   Participation.h \
@@ -4476,6 +4486,7 @@ CMakeFiles/runUnitTests.dir/XMLreader.cpp.o: XMLreader.cpp \
   Building.h \
   Campus.h \
   Catering.h \
+  DesignByContract.h \
   Meeting.h \
   MeetingPlanner.h \
   Participation.h \
@@ -5072,8 +5083,6 @@ Test/Test.cpp:
 
 /usr/include/c++/13/stop_token:
 
-/usr/include/c++/13/stdlib.h:
-
 /usr/include/c++/13/semaphore:
 
 /usr/include/c++/13/pstl/execution_defs.h:
@@ -5159,6 +5168,10 @@ _deps/googletest-src/googletest/include/gtest/gtest_prod.h:
 Renovation.cpp:
 
 /usr/include/x86_64-linux-gnu/c++/13/bits/basic_file.h:
+
+_deps/googletest-src/googletest/include/gtest/internal/custom/gtest-port.h:
+
+/usr/include/c++/13/iostream:
 
 /usr/include/x86_64-linux-gnu/bits/types/struct_FILE.h:
 
@@ -5303,10 +5316,6 @@ _deps/googletest-src/googletest/include/gtest/gtest.h:
 /usr/include/c++/13/ext/alloc_traits.h:
 
 /usr/include/c++/13/new:
-
-_deps/googletest-src/googletest/include/gtest/internal/gtest-port.h:
-
-/usr/include/c++/13/bits/alloc_traits.h:
 
 /usr/include/c++/13/bits/concept_check.h:
 
@@ -5600,6 +5609,16 @@ Catering.cpp:
 
 /usr/include/c++/13/bits/locale_facets_nonio.h:
 
+_deps/googletest-src/googletest/include/gtest/internal/gtest-port.h:
+
+/usr/include/c++/13/bits/alloc_traits.h:
+
+DesignByContract.h:
+
+/usr/include/c++/13/utility:
+
+/usr/include/c++/13/bits/stl_heap.h:
+
 /usr/lib/gcc/x86_64-linux-gnu/13/include/limits.h:
 
 /usr/include/c++/13/bits/ranges_base.h:
@@ -5676,10 +5695,6 @@ Test/Test_MeetingPlanner.cpp:
 
 /usr/include/c++/13/ratio:
 
-/usr/include/c++/13/utility:
-
-/usr/include/c++/13/bits/stl_heap.h:
-
 /usr/include/c++/13/bits/stl_tempbuf.h:
 
 /usr/include/x86_64-linux-gnu/bits/types/clockid_t.h:
@@ -5729,6 +5744,8 @@ Test/Test_Meeting.cpp:
 Renovation.h:
 
 /usr/include/c++/13/stdexcept:
+
+/usr/include/c++/13/stdlib.h:
 
 /usr/include/c++/13/vector:
 
@@ -5797,7 +5814,3 @@ _deps/googletest-src/googletest/include/gtest/internal/gtest-string.h:
 MeetingPlanner.h:
 
 /usr/include/c++/13/bits/fstream.tcc:
-
-_deps/googletest-src/googletest/include/gtest/internal/custom/gtest-port.h:
-
-/usr/include/c++/13/iostream:

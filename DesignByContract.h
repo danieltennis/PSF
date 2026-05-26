@@ -6,14 +6,19 @@
 // Description : Declarations for design by contract in C++
 //============================================================================
 
-// #include <assert.h>
+#ifndef DESIGN_BY_CONTRACT_H
+#define DESIGN_BY_CONTRACT_H
 
-// #define REQUIRE(assertion, what) \
-// 	if (!(assertion)) __assert (what, __FILE__, __LINE__)
+/*
 
-// #define ENSURE(assertion, what) \
-// 	if (!(assertion)) __assert (what, __FILE__, __LINE__)
+#include <assert.h>
 
+#define REQUIRE(assertion, what) \
+    if (!(assertion)) __assert (what, __FILE__, __LINE__)
+
+#define ENSURE(assertion, what) \
+    if (!(assertion)) __assert (what, __FILE__, __LINE__)
+*/
 
 #include <stdio.h>
 #include <stdlib.h>
@@ -38,13 +43,15 @@ static inline void contract_fail(
 }
 
 #define REQUIRE(assertion, what) \
-    do { \
-        if (!(assertion)) \
-            contract_fail(#assertion, __FILE__, __LINE__, what); \
-    } while (0)
+do { \
+if (!(assertion)) \
+contract_fail(#assertion, __FILE__, __LINE__, what); \
+} while (0)
 
 #define ENSURE(assertion, what) \
-    do { \
-        if (!(assertion)) \
-            contract_fail(#assertion, __FILE__, __LINE__, what); \
-    } while (0)
+do { \
+if (!(assertion)) \
+contract_fail(#assertion, __FILE__, __LINE__, what); \
+} while (0)
+
+#endif // DESIGN_BY_CONTRACT_H

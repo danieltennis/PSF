@@ -14,14 +14,13 @@ TEST(RoomTest, EmptyName)
     EXPECT_FALSE(isValid(room));
 }
 
-// etc.
 
 // lege identifier moet FALSE geven
 TEST(RoomTest, EmptyIdentifier)
 {
-    Room room("Room A", "", 10,"Main Campus", "Building 1");
-
-    EXPECT_FALSE(isValid(room));
+    EXPECT_DEATH({
+        Room room("Room A", "", 10, "Main Campus", "Building 1");
+    }, "Kamer identifier mag niet leeg zijn");
 }
 
 // capaciteit <= 0 moet FALSE geven
@@ -35,7 +34,7 @@ TEST(RoomTest, InvalidCapacity)
 // negatieve capaciteit
 TEST(RoomTest, NegativeCapacity)
 {
-    Room room("Room A", "A1", -5,"Main Campus","Building1");
-
-    EXPECT_FALSE(isValid(room));
+    EXPECT_DEATH({
+        Room room("Room A", "A1", -5, "Main Campus", "Building1");
+    }, "Capaciteit van een kamer mag niet negatief zijn");
 }

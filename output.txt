@@ -1,0 +1,58 @@
+## ==== [SYSTEM STATUS] ==== ##
+=== CAMPUSSEN ===
+- Main Campus (C1)
+- Science Campus (C2)
+
+=== GEBBOUWEN ===
+- Main Building (B1), Campus: C1
+- Engineering Hall (B2), Campus: C2
+
+=== KAMERS ===
+- Room A (ID: A1, Capaciteit: 10, Gebouw: B1, Campus: C1)
+- Room B (ID: B1R, Capaciteit: 5, Gebouw: B1, Campus: C1)
+- Lab 1 (ID: L1, Capaciteit: 20, Gebouw: B2, Campus: C2)
+
+=== MEETINGS ===
+- Small Team Sync [M3]
+  Locatie: Room B (B1R), Gebouw: B1, Campus: C1
+  Datum: 2026-5-23
+  Catering: Nee
+ CO2 meeting: 10 kg
+ CO2 catering: 0 kg
+  Deelnemers: Alice, Bob
+  -----------------------
+- Late Meeting [M5]
+  Locatie: Room A (A1), Gebouw: B1, Campus: C1
+  Datum: 2026-5-30
+  Catering: Ja
+ CO2 meeting: 10 kg
+ CO2 catering: 20 kg
+  Deelnemers: Charlie
+  -----------------------
+- Online Standup [M6]
+  Locatie: Online
+  Datum: 2026-5-22
+  Catering: Nee
+ CO2 meeting: 5 kg
+ CO2 catering: 0 kg
+  Deelnemers: Geen deelnemers geregistreerd.
+  -----------------------
+- Remote Workshop [M8]
+  Locatie: Online
+  Datum: 2026-5-24
+  Catering: Nee
+ CO2 meeting: 5 kg
+ CO2 catering: 0 kg
+  Deelnemers: Geen deelnemers geregistreerd.
+  -----------------------
+- Parallel Online Meeting [M9]
+  Locatie: Online
+  Datum: 2026-5-22
+  Catering: Nee
+ CO2 meeting: 5 kg
+ CO2 catering: 0 kg
+  Deelnemers: Geen deelnemers geregistreerd.
+  -----------------------
+
+--== CO2 summary ==--
+Total CO2 emitted: 55 kg

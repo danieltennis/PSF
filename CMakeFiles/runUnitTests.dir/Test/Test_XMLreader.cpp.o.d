@@ -309,6 +309,7 @@ CMakeFiles/runUnitTests.dir/Test/Test_XMLreader.cpp.o: \
  /home/mohammed/CLionProjects/PSF/Test/../XMLreader.h \
  /home/mohammed/CLionProjects/PSF/Test/../MeetingPlanner.h \
  /home/mohammed/CLionProjects/PSF/Test/../Room.h \
+ /home/mohammed/CLionProjects/PSF/Test/../DesignByContract.h \
  /home/mohammed/CLionProjects/PSF/Test/../Meeting.h \
  /usr/include/c++/13/chrono /usr/include/c++/13/bits/chrono_io.h \
  /usr/include/c++/13/iomanip /usr/include/c++/13/bits/quoted_string.h \
